@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Merge Sort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>Library Management System</h1>
+        <p>Powered by Vanilla JS Merge Sort</p>
+    </header>
+
+    <div class="container">
+        <div class="card add-section">
+            <h2>Add New Book</h2>
+            <form id="bookForm" class="form-grid">
+                <input type="number" id="bookId" placeholder="Book ID (e.g. 101)" required>
+                <input type="text" id="bookTitle" placeholder="Book Title" required>
+                <input type="text" id="bookAuthor" placeholder="Author Name" required>
+                <input type="number" id="bookYear" placeholder="Year (e.g. 2023)" required>
+                <button type="submit" class="btn btn-add">Add Book</button>
+            </form>
+            <p id="errorMsg" class="error-text"></p>
+        </div>
+
+        <div class="card controls-section">
+            <div class="search-box">
+                <label for="searchInput">Search Books:</label>
+                <input type="text" id="searchInput" placeholder="Filter by title or author...">
+            </div>
+
+            <div class="sort-controls">
+                <span>Merge Sort By:</span>
+                <button class="btn btn-sort" onclick="handleSort('id')">Book ID</button>
+                <button class="btn btn-sort" onclick="handleSort('title')">Title</button>
+                <button class="btn btn-sort" onclick="handleSort('author')">Author</button>
+                <button class="btn btn-sort" onclick="handleSort('year')">Year</button>
+            </div>
+        </div>
+
+        <div class="card trace-section">
+            <h3>Merge Sort Trace Log</h3>
+            <div id="traceBox" class="trace-box">Click any Merge Sort button above to see step-by-step merging...</div>
+        </div>
+
+        <div class="card table-section">
+            <h2>Book Catalog</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="th-id">ID</th>
+                        <th id="th-title">Title</th>
+                        <th id="th-author">Author</th>
+                        <th id="th-year">Year</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bookTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
